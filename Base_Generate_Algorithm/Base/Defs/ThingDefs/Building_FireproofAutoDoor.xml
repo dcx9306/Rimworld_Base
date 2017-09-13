@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Buildings>
+
+  <ThingDef ParentName="BuildingBase" Name="DoorBase" Abstract="True">
+    <thingClass>Building_Door</thingClass>
+    <blueprintClass>Blueprint_Door</blueprintClass>
+    <category>Building</category>
+    <blueprintGraphicData>
+      <texPath>Things/Building/Door/Door_Blueprint</texPath>
+    </blueprintGraphicData>
+    <altitudeLayer>DoorMoveable</altitudeLayer>
+    <fillPercent>1</fillPercent>
+    <useHitPoints>true</useHitPoints>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <drawerType>RealtimeOnly</drawerType>
+    <building>
+      <soundDoorOpenPowered>DoorOpenPowered</soundDoorOpenPowered>
+      <soundDoorClosePowered>DoorClosePowered</soundDoorClosePowered>
+      <soundDoorOpenManual>DoorOpenManual</soundDoorOpenManual>
+      <soundDoorCloseManual>DoorCloseManual</soundDoorCloseManual>
+      <ignoreNeedsPower>true</ignoreNeedsPower>
+      <canPlaceOverWall>true</canPlaceOverWall>
+    </building>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DoorBase">
+    <defName>FireproofAutodoor</defName>
+    <label>fireproof autodoor</label>
+    <description>Fireproof version of the autodoor. Divides rooms. Powered operation allows people to move through the door without slowing down.</description>
+    <statBases>
+      <WorkToMake>2000</WorkToMake>
+      <Flammability>0</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Door/Autodoor_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+    <costList>
+      <Steel>60</Steel>
+    </costList>
+    <costStuffCount>40</costStuffCount>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+  </ThingDef>
+
+</Buildings>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+  <!-- ================ SAM missile ============== -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Sam</defName>
+    <label>SAM</label>
+    <thingClass>OutpostGenerator.Projectile_Sam</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Rocket_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <altitudeLayer>FlyingItem</altitudeLayer>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>80</damageAmountBase>
+      <explosionRadius>3.0</explosionRadius>
+    </projectile>
+  </ThingDef>
+  
+</ThingDefs>
